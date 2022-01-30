@@ -1,0 +1,27 @@
+package method;
+
+public class Demo04 {
+    public static void main(String[] args) {
+        printMax(23,3,1,2,31);
+        printMax(new double[]{12,2,3,12,222.2});
+    }
+
+
+    //找最大值函数
+    public static void printMax(double... numbers){
+        if(numbers.length==0){
+            System.out.println("No argument passed");
+            return;
+        }
+
+        double result = numbers[0];
+
+        //排序
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] > result){
+                result = numbers[i];
+            }
+        }
+        System.out.println("The max value is "+result);
+    }
+}
